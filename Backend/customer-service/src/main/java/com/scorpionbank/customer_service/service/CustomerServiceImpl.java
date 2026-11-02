@@ -37,6 +37,7 @@ import java.util.UUID;
         public CustomerResponse createCustomer(
                 CustomerCreateRequest request) {
 
+
             String email = request.email().trim().toLowerCase();
 
             if (customerRepository.existsByEmail(email)) {
@@ -44,6 +45,7 @@ import java.util.UUID;
             }
 
             Customer customer = customerMapper.toEntity(request);
+            customer.setCustomerNumber(generateCustomerNumber());
 
             Customer savedCustomer = customerRepository.save(customer);
 
@@ -105,9 +107,24 @@ import java.util.UUID;
                     .map(customerMapper::toResponse);
         }
 
+        @Override
+        public CustomerResponse getCustomerByCustomerNumber(String customerNumber) {
+            return null;
+        }
+
         private Customer findCustomer(UUID id) {
 
             return customerRepository.findById(id)
                     .orElseThrow(() -> new CustomerNotFoundException(id));
+        }
+        private String generateCustomerNumber(){
+            String customerNumber;
+            do{
+                int number=10000000+
+                new java.security.SecureRandom().nextInt(90000000);
+                customerNumber=String.valueOf(number);
+            }
+            while (customerRepository.existsByCustomerNumber(customerNumber));
+            return customerNumber;
         }
     }

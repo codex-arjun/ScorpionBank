@@ -34,5 +34,6 @@ public interface CustomerService {
             CustomerStatus status,
             Pageable pageable
     );
+    CustomerResponse  getCustomerByCustomerNumber(String customerNumber);
 }
 

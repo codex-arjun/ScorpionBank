@@ -33,11 +33,16 @@ import java.util.UUID;
 }
 )
 public class Customer {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @Column(name = "auth_user_id",nullable = true,unique = true)
     private UUID authUserId;
+
+    @Column(name = "customer_number",unique = true,nullable = false,length = 8)
+    private String customerNumber;
     @Column(name = "first_name", nullable = false, length = 100)
     private String firstName;
     @Column(name = "last_name", nullable = false, length = 100)

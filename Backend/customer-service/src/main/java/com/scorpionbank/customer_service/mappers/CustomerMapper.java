@@ -49,6 +49,7 @@ public class CustomerMapper {
                 customer.getLastName(),
                 customer.getEmail(),
                 customer.getPhone(),
+                customer.getCustomerNumber(),
                 customer.getDateOfBirth(),
                 customer.getAddress(),
                 customer.getStatus(),

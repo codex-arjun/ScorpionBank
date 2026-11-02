@@ -14,4 +14,5 @@ public interface CustomerRepository extends JpaRepository<Customer, UUID> {
     Optional<Customer> findByEmail(String email);
     boolean existsByEmail(String email);
     Page<Customer> findByStatus(CustomerStatus status, Pageable pageable);
+    boolean existsByCustomerNumber(String customerNumber);
 }

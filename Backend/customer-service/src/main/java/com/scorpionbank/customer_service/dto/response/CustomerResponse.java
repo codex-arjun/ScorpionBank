@@ -10,6 +10,7 @@ public record CustomerResponse (
 
         UUID id,
         UUID authUserId,
+        String customerNumber,
         String firstName,
         String lastName,
         String email,
