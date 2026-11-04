@@ -62,7 +62,9 @@ public class AuthServiceImpl implements AuthService {
                                 request.firstName(),
                                 request.lastName(),
                                 email,
-                                request.phone()
+                                request.phone(),
+                                request.dateOfBirth(),
+                                request.address()
                         )
                 );
 
@@ -86,8 +88,7 @@ public class AuthServiceImpl implements AuthService {
                 customer.id(),
                 customer.customerNumber(),
                 user.getEmail(),
-                user.getRole().name()
-        );
+                user.getRole().name());
     }
 
     @Override

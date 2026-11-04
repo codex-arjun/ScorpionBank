@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Component
@@ -35,7 +36,9 @@ public class CustomerServiceClient {
                 String firstName,
                 String lastName,
                 String email,
-                String phone
+                String phone,
+                LocalDate dateOfBirth,
+                String address
         ) {}
 
         public record CustomerResponse(

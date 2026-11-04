@@ -43,6 +43,7 @@ public class User {
     @Column(nullable = false,updatable = false)
     private LocalDateTime createdAt;
 
+    @PrePersist
     public void onCreate(){
         createdAt=LocalDateTime.now();
     }

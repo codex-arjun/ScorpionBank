@@ -1,9 +1,8 @@
 package com.scorpionbank.authservice.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
+
+import java.time.LocalDate;
 
 public record RegisterRequest(
        @NotBlank(message = "first name is required ")
@@ -22,6 +21,12 @@ public record RegisterRequest(
                message = "mobile must contains 10 digits"
        )
        String phone,
+
+       @NotNull
+       LocalDate dateOfBirth,
+
+       @NotBlank
+       String address,
 
        @NotBlank(message = "password is required ")
        @Size(min=8,max = 16)

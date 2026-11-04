@@ -22,8 +22,7 @@ spring:
 customer:
   service:
     url: ${CUSTOMER_SERVICE_URL:http://localhost:8081}
-
 app:
   jwt:
-    secret: ${JWT_SECRET}
+    secret: "IfFV8BYUmPIOdP5Lwma3aadsrtNjeQSzvsHPspjzPmo"
     expiration: 900000

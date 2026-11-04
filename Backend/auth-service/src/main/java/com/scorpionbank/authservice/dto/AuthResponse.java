@@ -21,5 +21,6 @@ public record AuthResponse(
 
  String role
 
+
 ) {
 }
